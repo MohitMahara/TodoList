@@ -109,7 +109,6 @@ app.post('/', (req, res) => {
   if (listName === "Today") {
     item.save();
     res.redirect('/');
-    location.reload();
   }
   else{
 
@@ -117,7 +116,6 @@ app.post('/', (req, res) => {
       list.items.push(item);
       list.save();
       res.redirect('/' + listName);
-      location.reload();
     });
 
   }
