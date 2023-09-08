@@ -97,7 +97,7 @@ app.get('/:customListName', (req, res) => {
   });
 })
 
-app.post('/', (req, res) => {
+app.post('/', async (req, res) => {
 
   const itemName = req.body.newItem;
   const listName = req.body.list;
@@ -107,14 +107,14 @@ app.post('/', (req, res) => {
   })
 
   if (listName === "Today") {
-    item.save();
+   await item.save();
     res.redirect('/');
   }
   else{
 
-    List.findOne({name:listName}).then((list) =>{
+    List.findOne({name:listName}).then( async (list) =>{
       list.items.push(item);
-      list.save();
+     await list.save();
       res.redirect('/' + listName);
     });
 
@@ -131,7 +131,7 @@ app.post('/delete', async (req, res) => {
       res.redirect('/');
   }
   else{
-    List.findOneAndUpdate({name: listName}, {$pull : {items : {_id : checkedItemId}}}).then( () =>{
+     await List.findOneAndUpdate({name: listName}, {$pull : {items : {_id : checkedItemId}}}).then( () =>{
         res.redirect('/' + listName);
     })
   }
