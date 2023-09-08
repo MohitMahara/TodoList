@@ -148,11 +148,15 @@ transform: scale(0.9);
     .heading{
         font-size: 30px;
         padding-top: 20px;
-        padding-bottom: 0;
+        padding-bottom: 10px;
+    }
+
+    .list-item{
+        font-size: 18px;
     }
 
     .container{
-        width: 85%;
+        width: 95%;
         padding: 40px 20px;
         height: 80%;
         margin-top: 20px;
