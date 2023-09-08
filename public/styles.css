@@ -1,0 +1,173 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&family=Poppins:wght@400;500;700&family=Roboto:wght@400;500&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100%;
+    height: 100vh;
+}
+
+.main-section{
+    width: 100%;
+    height: 100%;
+    background-color: #213363;
+}
+
+.heading{
+    text-align: center;
+    color: white;
+    padding-block: 40px;
+    font-size: 40px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+    font-family: "Montserrat",sans-serif;
+}
+
+.container{
+    background-color: white;
+    height: 60%;
+    margin-top: 40px;
+    text-align: center;
+    width: 40%;
+    margin: auto;
+    padding: 40px 20px; 
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+
+/* container section */
+
+.add-task{
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+
+input[type= text]{
+    width: 90%;
+    height: 100%;
+    padding: 10px;
+    font-size: 18px;
+   
+}
+
+.add-icon{
+    width: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #213363;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+    border:none;
+    font-size: 40px;
+}
+
+.task-container{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 100%;
+    width: 100%;
+    padding-block: 30px;
+    margin-top: 20px;
+    overflow: auto;
+
+}
+
+
+.list-item{
+    list-style-type: none;
+    width: 98%;
+    background-color: rgb(44, 43, 43);
+    font-size: 20px;
+    font-family: "Roboto",sans-serif;
+    letter-spacing: 2px;
+    color: white;
+    height: auto;
+    text-align: start;
+    padding: 10px;
+    border-radius: 4px;
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.todo-btn{
+ cursor: pointer;
+ padding:5px 10px;
+}
+
+.todo-btn:hover{
+transform: scale(0.9);
+}
+
+.todo-text{
+     overflow: auto;
+    line-height: 27px;
+}
+
+/* media query */
+
+@media screen and (max-width:1024px) {
+    .container{
+        width: 50%;
+    }
+
+    .add-icon{
+        width: 9%;
+    }
+}
+
+
+@media screen and (max-width:768px) {
+
+    .container{
+        width: 70%;
+        height: 70%;
+    }
+
+    .heading{
+      padding-block: 30px;
+    }
+}
+
+@media screen and (max-width:425px) {
+
+
+    .heading{
+        font-size: 30px;
+        padding-top: 20px;
+        padding-bottom: 0;
+    }
+
+    .container{
+        width: 85%;
+        padding: 40px 20px;
+        height: 80%;
+        margin-top: 20px;
+    }
+
+    input[type= "text"]{
+        width: 85%;
+    }
+
+    .add-icon{
+        width: 13%;
+    }
+
+    .task-container{
+        margin-top: 5px;
+    }
+
+}

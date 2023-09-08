@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ToDo List</title>
+    <link rel="stylesheet" href="/styles.css">
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/3bf8c869a3.js" crossorigin="anonymous"></script>
+    <!-- JavaScript File -->
+</head>
+
+<body>
+    <main class="main-section">
+        <h1 class="heading"><%= listTitle %></h1>
+        <div class="container">
+
+            <form class="add-task" action="/" method="post">
+                <input type="text" placeholder="Add your new todo" class="enter-task" name="newItem">
+                <button type="submit" name="list" class="add-icon" value="<%= listTitle %>">+</button>
+            </form>
+
+            <div class="task-container">
+                <% newListItems.forEach(function(newItem){ %>
+                <form action="/delete" method="post">
+                   <div class="list-item">
+                       <input type="checkbox" name="checkbox" value="<%=newItem._id%>" class="remove" onchange="this.form.submit()">
+                       <p><%= newItem.name %></p>
+                   </div>
+                   <input type="hidden" name="listName" value="<%=listTitle %>" ></input>
+                </form>
+                <% }) %>
+
+            </div>
+        </div>
+
+    </main>
+</body>
+
+</html>
